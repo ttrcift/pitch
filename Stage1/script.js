@@ -1,23 +1,50 @@
-// Initialize fullPage.js
-new fullpage('#fullpage', {
-  autoScrolling: true,
-  navigation: true,
-  anchors: [
-    'cover', 'vision', 'root-cause', 'market',
-    'solution', 'workflow', 'advantage', 'mvp',
-    'business-model', 'go-to-market', 'investment',
-    'team-vision'
-  ],
-  navigationTooltips: [
-    'Cover', 'Vision', 'Root Cause', 'Market',
-    'Solution', 'Workflow', 'Advantage', 'MVP',
-    'Business Model', 'Go-To-Market', 'Investment',
-    'Team & Vision'
-  ],
-  showActiveTooltip: false
+// Slide titles for hover tooltips
+const slideTitles = [
+  "Cover",
+  "Purpose & Problem",
+  "Root Cause",
+  "Market",
+  "Solution",
+  "Workflow",
+  "Competitive Advantage",
+  "MVP",
+  "Business Model",
+  "Go-To-Market",
+  "Financing Requirements",
+  "Team & Vision"
+];
+
+// Initialize Swiper
+const swiper = new Swiper('.swiper', {
+  direction: 'vertical',
+  mousewheel: true,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  on: {
+    init: function() {
+      const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+      bullets.forEach((bullet, index) => {
+        bullet.setAttribute('title', slideTitles[index]);
+      });
+    },
+  },
 });
 
-// Language Toggle Logic
+// For safety, in case init hook is too soon
+setTimeout(() => {
+  const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+  bullets.forEach((bullet, index) => {
+    bullet.setAttribute('title', slideTitles[index]);
+  });
+}, 500);
+
+// Language Toggle
 const enBtn = document.getElementById('en-btn');
 const cnBtn = document.getElementById('cn-btn');
 
