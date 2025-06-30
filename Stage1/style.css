@@ -68,22 +68,22 @@ html, body {
 
 /* Headings */
 h1 {
-  font-size: 2.8em;
+  font-size: 3em;
   margin-bottom: 20px;
   color: #00ffe0;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.4em;
   margin-bottom: 20px;
   color: #00ffe0;
 }
 
 /* Paragraphs */
 p {
-  font-size: 1.1em;
+  font-size: 1.3em;
   margin-bottom: 20px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 p.highlight {
@@ -99,7 +99,7 @@ ul, ol {
 }
 
 ul li, ol li {
-  font-size: 1.1em;
+  font-size: 1.3em;
   margin-bottom: 10px;
 }
 
